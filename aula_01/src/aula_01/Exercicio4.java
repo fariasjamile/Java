@@ -7,7 +7,7 @@ public class Exercicio4 {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner (System.in);
 
-		float n1,n2, n3, n4;
+		float n1,n2, n3, n4, diferenca;
 
         System.out.println("Digite o primeiro número: ");
         n1 = leia.nextFloat();
@@ -23,8 +23,9 @@ public class Exercicio4 {
         System.out.println("Digite o quarto número: ");
         n4 = leia.nextFloat();
         
-        Diferenca = (n1 * n2)-(n3 * n4);
-        System.out.println("Diferença: " + Diferenca);
+        diferenca = (n1 * n2) - (n3 * n4);
+        System.out.println("Diferença: " + diferenca);
+        
         leia.close();
 		// TODO Auto-generated method stub
 
