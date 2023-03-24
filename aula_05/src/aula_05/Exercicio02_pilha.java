@@ -5,10 +5,9 @@ import java.util.Stack;
 
 public class Exercicio02_pilha {
 
-	public static void main(String[] args) {
-
-
-Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
 
         Stack<String> pilha = new Stack<String>();
         int opcao = -1;
@@ -60,6 +59,6 @@ Scanner scanner = new Scanner(System.in);
 
 
         }
-}
-	}
+     }
+  }
 }
