@@ -1,7 +1,10 @@
 package conta;
 
 import java.util.Scanner;
+
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
@@ -9,24 +12,39 @@ public class Menu {
 
 		Scanner leia = new Scanner(System.in);
 
-		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
+		int opcao;
+		int numero;
+		int agencia;
+		int tipo;
+		int aniversario; 
+		int numeroDestino;
 		String titular;
-		float saldo, limite, valor;
+		float saldo;
+		float limite;
+		float valor;
 		
-		Conta c1 = new Conta( 1, 123, 1, "Jamile Farias", 100000.00f);
-		
-		System.out.println("\nSaldo da conta: " + c1.getSaldo() + "\n");
-
-		c1.setTitular("\nJamile de farias Oliveira");
-		
+		Conta c1 = new Conta(1, 123, 1, "Jeniffer Souza", 10000.00f);
 		c1.visualizar();
 		
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Jamile Farias", 10000.00f, 1000.00f);
+		cc1.visualizar();
+		
+		cc1.sacar(1000);
+		
+		cc1.visualizar();
+		
+		cc1.depositar(2000);
+		
+		cc1.visualizar();
+		
+		ContaPoupanca c2 = new ContaPoupanca (2, 1234, 2, "Heimy Dias", 20000.00f, 20);
+		c2.visualizar();
 		
 		while (true) {
 
-			System.out.println(Cores. TEXT_PURPLE + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
+			System.out.println(Cores.TEXT_PURPLE + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                DEVGIRLSBANK                ");
+			System.out.println("                 DEV GIRLS BANK                      ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
@@ -47,11 +65,10 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
-				System.out.println(Cores.TEXT_PURPLE + "Banco do Brazil com Z - O seu Futuro começa aqui!");
+				System.out.println(Cores.TEXT_CYAN_BOLD + "Banco do Brazil com Z - O seu Futuro começa aqui!");
 				sobre();
 				leia.close();
 				System.exit(0);
-				//system é pra fechar o scanner
 			}
 
 			switch (opcao) {
@@ -188,10 +205,11 @@ public class Menu {
 			}
 		}
 	}
+
 	public static void sobre() {
 		System.out.println("\n*********************************************************");
-		System.out.println("Jamile Farias - fariasjamile1234@gmail.com");
-		System.out.println("https://github.com/fariasjamile");
+		System.out.println("Jamile de Farias Oliveira");
+		System.out.println("github.com/fariasjamile");
 		System.out.println("\n*********************************************************");
 	}
 }

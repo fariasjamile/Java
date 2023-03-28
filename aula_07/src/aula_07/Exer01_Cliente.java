@@ -2,11 +2,12 @@ package aula_07;
 
 public class Exer01_Cliente {
 
-		private String nome;
+		protected String nome;
 		private int idade;
 		private String sexo;
-		private String cidade;
+		protected String cidade;
 		private String telefone;
+		private String cpf;
 		
 		public Exer01_Cliente (String nome, int idade, String sexo, String cidade, String telefone) {
 			this.nome = nome;
@@ -14,8 +15,7 @@ public class Exer01_Cliente {
 			this.sexo = sexo;
 			this.cidade = cidade;
 			this.telefone = telefone;
-		
-
+	
 	}
 
 		public String getNome() {
@@ -64,5 +64,6 @@ public class Exer01_Cliente {
 			System.out.println("Sexo: " + this.sexo);
 			System.out.println("Cidade: " + this.cidade);
 			System.out.println("Telefone: " + this.telefone);
+			System.out.println("CPF: " + this.cpf);
 		}
 }
