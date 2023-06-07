@@ -1,66 +1,72 @@
 package aula_05;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Exercicio01_Fila {
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        Stack<String> pilha = new Stack<String>();
-        int opcao = -1;
-        while (opcao != 0)
-
-
-        System.out.print("*************************************************");
-        System.out.print("\n\t1 - Adicionar livro na pilha");
-        System.out.print("\t2 - Listar todos os livros");
-        System.out.print("\t3 - Retirar livro");
-        System.out.print("\t0 - Sair");
-        System.out.print("\n*************************************************");
-        System.out.print("\nEscolha uma opção: ");
-        opcao = scanner.nextInt();
-        scanner.nextLine();
-        switch (opcao) {
-
-        case 1:
-            System.out.print("\nAdicionar livro na pilha: ");
-            String livro = scanner.nextLine();
-            pilha.push(livro);
-            System.out.println("\nLivro adicionado!\n");
-            break;
-
-        case 2:
-            if (pilha.isEmpty()) {
-                System.out.println("\n A pilha está vazia.");
-
-            } else {
-                System.out.println("\nLivros na pilha: ");
-                for (var livro1 : pilha)
-                    System.out.println(livro1);
-                break;
-            }
-
-        case 3:
-            System.out.println("Livro retirado da pilha.");
-            pilha.pop();
-            System.out.println(pilha);
-            break;
-            
-        case 0:
-            System.out.println("\nPrograma finalizado.");
-            break;
-        default:
-            System.out.println("\nOpção inválida!");
-            break;
-
+Scanner scanner = new Scanner(System.in);
+    
+        Queue<String> fila = new LinkedList<>();
        
-
+        int opcao = -1;
+    
+        while (opcao != 0) {
+            
+            //Menu:
+            System.out.print("*************************************************");
+            System.out.println("\n\t1 - Adicionar cliente na fila");
+            System.out.println("\t2 - Listar clientes na fila");
+            System.out.println("\t3 - Chamar próximo cliente");
+            System.out.println("\t0 - Sair");
+            System.out.print("\n*************************************************");
+            System.out.print("\nEscolha uma opção: ");
+            
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            
+            switch (opcao) {
+            
+            
+                case 1:
+                    System.out.print("\nDigite o nome do cliente: ");
+                String nomeCliente = scanner.nextLine();
+                    fila.add(nomeCliente);
+                    System.out.println("\nCliente adicionado!\n");
+                    break;
+                case 2:
+                    if (fila.isEmpty()) {
+                        System.out.println("\n Fila vazia.");
+                    } else {
+                        System.out.println("\nClientes na fila:");
+                       
+ 
+                        for (String cliente : fila) {
+                            System.out.println(cliente);
+                        }
+                    }
+                    break;
+                case 3:
+                    if (fila.isEmpty()) {
+                        System.out.println("\nFila vazia.");
+                    } else {
+                        String proximoCliente = fila.poll();
+                        System.out.println("Chamando cliente " + proximoCliente);
+                    }
+                    break;
+                case 0:
+                    System.out.println("\nPrograma finalizado.");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
         }
-        
         scanner.close();
+        
     }
-		
 
-	}
+}

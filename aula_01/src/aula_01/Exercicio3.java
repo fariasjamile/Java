@@ -1,36 +1,33 @@
 package aula_01;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Exercicio3 {
 
 	public static void main(String[] args) {
-		Scanner leia = new Scanner (System.in);
+		// TODO Auto-generated method stub
+		DecimalFormat df = new DecimalFormat("###,###,##0.00");
 
-        float salariobruto, adicionalnoturno, horasextras, descontos;
-        String nome;
+		Scanner leia = new Scanner(System.in);
 
-        System.out.println("Digite o nome e sobrenome do Aluno: ");
-        nome = leia.nextLine();
+		float salarioB, adicionalN, horaExtra, desconto, salarioL;
 
-        System.out.print("Digite a primeira nota: ");
-        salariobruto= leia.nextFloat();
+		System.out.println("Digite seu salário bruto:");
+		salarioB = leia.nextFloat();
 
-        System.out.print("Digite a segunda nota: ");
-        adicionalnoturno = leia.nextFloat();
+		System.out.println("Digite o adicional noturno:");
+		adicionalN = leia.nextFloat();
 
-        System.out.print("Digite a terceira nota: ");
-        horasextras = leia.nextFloat();
+		System.out.println("Digite o valor da hora extra:");
+		horaExtra = leia.nextFloat();
 
-        System.out.print("Digite a quarta nota: ");
-        descontos = leia.nextFloat();
+		System.out.println("Digite o desconto:");
+		desconto = leia.nextFloat();
 
+		salarioL = (salarioB + adicionalN + (horaExtra * 5)) - desconto;
 
-        System.out.println("Salarios líquido: " + nome);
-        System.out.println("Média Final: " + (salariobruto + adicionalnoturno + (horasextras * 5)- descontos ));
-
-        leia.close();
-
+		System.out.println("Salário Liquido: " + df.format(salarioL));
 	}
 
 }
