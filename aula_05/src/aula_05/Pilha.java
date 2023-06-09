@@ -5,30 +5,29 @@ import java.util.Stack;
 public class Pilha {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		
 		Stack<String> pilha = new Stack<String>();
-		// stack é pilha para armazenar os elementos e métodos para adicionar, remover e acessar elementos//
-		pilha.push("Brenda");
-		//push é adicionar elementos//
-		pilha.push("Guilherme");
-		pilha.push("Michelle");
-		pilha.push("Gabriel Lopes");
-		pilha.push("Katarina");
+		
+		pilha.add("Brenda");
+		pilha.add("Camille");
+		pilha.add("Michelle");
+		pilha.add("Katarina");
+		pilha.add("Gabriel");
 		
 		for(var elemento : pilha)
 			System.out.println(elemento);
 		
 		System.out.println("Retirar elemento: ");
-		pilha.pop();
+		pilha.pop();//excluir elemento automaticamente - Primeiro elemento adicionado
 		System.out.println(pilha);
 		
-		pilha.push("Reynaldo");
+		
+		System.out.println("Adicionar elemento: ");
+		pilha.push("Reynaldo");//adicionar elemento - Ultimo lugar da fila
 		System.out.println(pilha);
 		
-		System.out.println(pilha.size());
-		//size fala a quantidade de elementos que tem na fila 
-		
-		System.out.println(pilha.contains("Reynaldo"));
+		System.out.println(pilha.size());//imprime a quantidade de elementos
 	}
 
 }

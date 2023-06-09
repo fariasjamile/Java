@@ -1,36 +1,33 @@
 package aula_05;
 
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Queue; //fila (o primeiro que entrar, sai)
 
 public class Fila {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		
 		Queue<String> fila = new LinkedList<String>();
-		//*Queue significa lista ou fila de palvras, linkedlista são as coisas que entrarão//
+		
 		fila.add("Brenda");
-		fila.add("Guilherme");
+		fila.add("Camille");
 		fila.add("Michelle");
-		fila.add("Gabriel Lopes");
 		fila.add("Katarina");
+		fila.add("Gabriel");
 		
 		for(var elemento : fila)
 			System.out.println(elemento);
 		
 		System.out.println("Retirar elemento: ");
-		fila.poll();
-		//poll retira um elemento//
+		fila.poll();//excluir elemento automaticamente - Primeiro elemento adicionado
 		System.out.println(fila);
 		
-		fila.add("Reynaldo");
+		System.out.println("Adicionar elemento: ");
+		fila.add("Reynaldo");//adicionar elemento - Ultimo lugar da fila
 		System.out.println(fila);
 		
-		System.out.println(fila.size());
-		//size é 
-		
-		System.out.println(fila.contains("Reynaldo"));
-		//contains é se tem algo na lista.
+		System.out.println(fila.size());//imprime a quantidade de elementos
 	}
 
 }
